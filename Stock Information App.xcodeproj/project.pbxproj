@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		B8A6B827D2BBD706A73FEAC1 /* Pods_Stock_Information_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C38434C307434C94F8D9064 /* Pods_Stock_Information_App.framework */; };
 		B92C1CAE4A46F96FAD0363DE /* Pods_Stock_Information_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DAC8D878BCA6F0AB55D78D /* Pods_Stock_Information_AppTests.framework */; };
+		FBBFD66821F5003B00BD5532 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD66721F5003B00BD5532 /* APIClient.swift */; };
+		FBBFD66A21F5004B00BD5532 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD66921F5004B00BD5532 /* APIRequest.swift */; };
+		FBBFD66E21F5099F00BD5532 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD66D21F5099F00BD5532 /* Stock.swift */; };
+		FBBFD67121F61CDF00BD5532 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD67021F61CDF00BD5532 /* BaseModel.swift */; };
+		FBBFD67321F6286F00BD5532 /* APIRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD67221F6286F00BD5532 /* APIRequestFactory.swift */; };
 		FBDED87A21DA830B00CEDC6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDED87921DA830B00CEDC6B /* AppDelegate.swift */; };
 		FBDED87C21DA830B00CEDC6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDED87B21DA830B00CEDC6B /* ViewController.swift */; };
 		FBDED87F21DA830B00CEDC6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDED87D21DA830B00CEDC6B /* Main.storyboard */; };
@@ -34,6 +39,11 @@
 		8C38434C307434C94F8D9064 /* Pods_Stock_Information_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Information_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAE88E332F75E65C0552125 /* Pods-Stock Information App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Information App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Information App/Pods-Stock Information App.debug.xcconfig"; sourceTree = "<group>"; };
 		ED0CD3C687DC5B28A66F9041 /* Pods-Stock Information App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Information App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Information App/Pods-Stock Information App.release.xcconfig"; sourceTree = "<group>"; };
+		FBBFD66721F5003B00BD5532 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		FBBFD66921F5004B00BD5532 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		FBBFD66D21F5099F00BD5532 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		FBBFD67021F61CDF00BD5532 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		FBBFD67221F6286F00BD5532 /* APIRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestFactory.swift; sourceTree = "<group>"; };
 		FBDED87621DA830B00CEDC6B /* Stock Information App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock Information App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDED87921DA830B00CEDC6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBDED87B21DA830B00CEDC6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +90,9 @@
 		FB81168921DA878500E97800 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				FBBFD66F21F61B9600BD5532 /* Base Clasess & Protocols */,
+				FBBFD66621F4FC5700BD5532 /* API Networking */,
+				FB81168B21DA879D00E97800 /* Miscellaneous */,
 				FB81168D21DA87E300E97800 /* Models */,
 				FB81168F21DA87F400E97800 /* View Controllers */,
 				FB81168E21DA87EA00E97800 /* Views */,
@@ -116,6 +129,7 @@
 		FB81168D21DA87E300E97800 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FBBFD66D21F5099F00BD5532 /* Stock.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +147,24 @@
 				FBDED87B21DA830B00CEDC6B /* ViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FBBFD66621F4FC5700BD5532 /* API Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FBBFD66721F5003B00BD5532 /* APIClient.swift */,
+				FBBFD66921F5004B00BD5532 /* APIRequest.swift */,
+				FBBFD67221F6286F00BD5532 /* APIRequestFactory.swift */,
+			);
+			path = "API Networking";
+			sourceTree = "<group>";
+		};
+		FBBFD66F21F61B9600BD5532 /* Base Clasess & Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FBBFD67021F61CDF00BD5532 /* BaseModel.swift */,
+			);
+			path = "Base Clasess & Protocols";
 			sourceTree = "<group>";
 		};
 		FBDED86D21DA830B00CEDC6B = {
@@ -159,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				FBDED87921DA830B00CEDC6B /* AppDelegate.swift */,
-				FB81168B21DA879D00E97800 /* Miscellaneous */,
 				FB81168A21DA878C00E97800 /* Resources */,
 				FB81168921DA878500E97800 /* Source */,
 			);
@@ -291,12 +322,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Stock Information App/Pods-Stock Information App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -351,6 +384,11 @@
 			files = (
 				FBDED87C21DA830B00CEDC6B /* ViewController.swift in Sources */,
 				FBDED87A21DA830B00CEDC6B /* AppDelegate.swift in Sources */,
+				FBBFD67321F6286F00BD5532 /* APIRequestFactory.swift in Sources */,
+				FBBFD67121F61CDF00BD5532 /* BaseModel.swift in Sources */,
+				FBBFD66E21F5099F00BD5532 /* Stock.swift in Sources */,
+				FBBFD66A21F5004B00BD5532 /* APIRequest.swift in Sources */,
+				FBBFD66821F5003B00BD5532 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,7 +553,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K4MUGL7ULP;
-				INFOPLIST_FILE = "Stock Information App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Stock Information App/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -534,7 +572,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K4MUGL7ULP;
-				INFOPLIST_FILE = "Stock Information App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Stock Information App/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
