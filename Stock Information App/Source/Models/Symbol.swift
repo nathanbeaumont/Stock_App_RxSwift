@@ -2,7 +2,7 @@ import Alamofire
 import Foundation
 import RxSwift
 
-struct Symbol {
+struct Symbol: BaseModel {
 
   enum type: String, Codable {
     case REIT = "ps"
@@ -16,7 +16,7 @@ struct Symbol {
   }
 
   // MARK: Stored Property
-  var symbol: String
+  var symbolTicker: String
   var name: String
   var date: String
   var isEnabled: Bool
@@ -28,7 +28,7 @@ struct Symbol {
        date: String,
        isEnabled: Bool,
        symbolType: Symbol.type) {
-        self.symbol = symbol
+        self.symbolTicker = symbol
         self.name = name
         self.date = date
         self.isEnabled = isEnabled
@@ -39,7 +39,7 @@ struct Symbol {
 // MARK: Codabale Methods
 extension Symbol: Codable {
   enum CodingKeys: String, CodingKey {
-    case symbol
+    case symbolTicker = "symbol"
     case name
     case date
     case isEnabled

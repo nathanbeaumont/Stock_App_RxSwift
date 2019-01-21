@@ -1,5 +1,5 @@
 import Foundation
 
-protocol BaseModel: Codable {
+protocol BaseModel: Codable, Hashable {
 
 }

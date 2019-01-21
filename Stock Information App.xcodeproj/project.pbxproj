@@ -9,18 +9,23 @@
 /* Begin PBXBuildFile section */
 		B8A6B827D2BBD706A73FEAC1 /* Pods_Stock_Information_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C38434C307434C94F8D9064 /* Pods_Stock_Information_App.framework */; };
 		B92C1CAE4A46F96FAD0363DE /* Pods_Stock_Information_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DAC8D878BCA6F0AB55D78D /* Pods_Stock_Information_AppTests.framework */; };
-		FBA7648F22039A3800660490 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7648E22039A3800660490 /* Symbol.swift */; };
+		FBA7648D220382F000660490 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7648C220382F000660490 /* UIFont.swift */; };
+		FBA764912204E54D00660490 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA764902204E54D00660490 /* Symbol.swift */; };
 		FBBFD66821F5003B00BD5532 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD66721F5003B00BD5532 /* APIClient.swift */; };
 		FBBFD66A21F5004B00BD5532 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD66921F5004B00BD5532 /* APIRequest.swift */; };
 		FBBFD66E21F5099F00BD5532 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD66D21F5099F00BD5532 /* Stock.swift */; };
 		FBBFD67121F61CDF00BD5532 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD67021F61CDF00BD5532 /* BaseModel.swift */; };
 		FBBFD67321F6286F00BD5532 /* APIRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD67221F6286F00BD5532 /* APIRequestFactory.swift */; };
+		FBBFD67621F67F5900BD5532 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD67521F67F5900BD5532 /* UIColor.swift */; };
+		FBBFD67821F6897400BD5532 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD67721F6897400BD5532 /* UILabel.swift */; };
 		FBDED87A21DA830B00CEDC6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDED87921DA830B00CEDC6B /* AppDelegate.swift */; };
-		FBDED87C21DA830B00CEDC6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDED87B21DA830B00CEDC6B /* ViewController.swift */; };
+		FBDED87C21DA830B00CEDC6B /* StockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDED87B21DA830B00CEDC6B /* StockListViewController.swift */; };
 		FBDED87F21DA830B00CEDC6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDED87D21DA830B00CEDC6B /* Main.storyboard */; };
 		FBDED88121DA830C00CEDC6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDED88021DA830C00CEDC6B /* Assets.xcassets */; };
 		FBDED88421DA830D00CEDC6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDED88221DA830D00CEDC6B /* LaunchScreen.storyboard */; };
 		FBDED88F21DA830D00CEDC6B /* Stock_Information_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDED88E21DA830D00CEDC6B /* Stock_Information_AppTests.swift */; };
+		FBF50A3621FA4C3D000ABE94 /* AddStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF50A3521FA4C3D000ABE94 /* AddStockViewController.swift */; };
+		FBF50A3821FA50DC000ABE94 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF50A3721FA50DC000ABE94 /* UINavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,15 +45,18 @@
 		8C38434C307434C94F8D9064 /* Pods_Stock_Information_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Information_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAE88E332F75E65C0552125 /* Pods-Stock Information App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Information App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Information App/Pods-Stock Information App.debug.xcconfig"; sourceTree = "<group>"; };
 		ED0CD3C687DC5B28A66F9041 /* Pods-Stock Information App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Information App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Information App/Pods-Stock Information App.release.xcconfig"; sourceTree = "<group>"; };
-		FBA7648E22039A3800660490 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
+		FBA7648C220382F000660490 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		FBA764902204E54D00660490 /* Symbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		FBBFD66721F5003B00BD5532 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		FBBFD66921F5004B00BD5532 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		FBBFD66D21F5099F00BD5532 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		FBBFD67021F61CDF00BD5532 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		FBBFD67221F6286F00BD5532 /* APIRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestFactory.swift; sourceTree = "<group>"; };
+		FBBFD67521F67F5900BD5532 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		FBBFD67721F6897400BD5532 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		FBDED87621DA830B00CEDC6B /* Stock Information App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stock Information App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDED87921DA830B00CEDC6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FBDED87B21DA830B00CEDC6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FBDED87B21DA830B00CEDC6B /* StockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewController.swift; sourceTree = "<group>"; };
 		FBDED87E21DA830B00CEDC6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBDED88021DA830C00CEDC6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBDED88321DA830D00CEDC6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +64,8 @@
 		FBDED88A21DA830D00CEDC6B /* Stock Information AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stock Information AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDED88E21DA830D00CEDC6B /* Stock_Information_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock_Information_AppTests.swift; sourceTree = "<group>"; };
 		FBDED89021DA830D00CEDC6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBF50A3521FA4C3D000ABE94 /* AddStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockViewController.swift; sourceTree = "<group>"; };
+		FBF50A3721FA50DC000ABE94 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +102,9 @@
 		FB81168921DA878500E97800 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				FBBFD66F21F61B9600BD5532 /* Base Clasess & Protocols */,
 				FBBFD66621F4FC5700BD5532 /* API Networking */,
+				FBBFD66F21F61B9600BD5532 /* Base Clasess & Protocols */,
+				FBBFD67421F67F4400BD5532 /* Extensions */,
 				FB81168B21DA879D00E97800 /* Miscellaneous */,
 				FB81168D21DA87E300E97800 /* Models */,
 				FB81168F21DA87F400E97800 /* View Controllers */,
@@ -132,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				FBBFD66D21F5099F00BD5532 /* Stock.swift */,
-				FBA7648E22039A3800660490 /* Symbol.swift */,
+				FBA764902204E54D00660490 /* Symbol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,7 +158,8 @@
 		FB81168F21DA87F400E97800 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FBDED87B21DA830B00CEDC6B /* ViewController.swift */,
+				FBF50A3521FA4C3D000ABE94 /* AddStockViewController.swift */,
+				FBDED87B21DA830B00CEDC6B /* StockListViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -168,6 +180,17 @@
 				FBBFD67021F61CDF00BD5532 /* BaseModel.swift */,
 			);
 			path = "Base Clasess & Protocols";
+			sourceTree = "<group>";
+		};
+		FBBFD67421F67F4400BD5532 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FBBFD67521F67F5900BD5532 /* UIColor.swift */,
+				FBA7648C220382F000660490 /* UIFont.swift */,
+				FBBFD67721F6897400BD5532 /* UILabel.swift */,
+				FBF50A3721FA50DC000ABE94 /* UINavigationController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FBDED86D21DA830B00CEDC6B = {
@@ -385,14 +408,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBDED87C21DA830B00CEDC6B /* ViewController.swift in Sources */,
+				FBDED87C21DA830B00CEDC6B /* StockListViewController.swift in Sources */,
 				FBDED87A21DA830B00CEDC6B /* AppDelegate.swift in Sources */,
+				FBF50A3821FA50DC000ABE94 /* UINavigationController.swift in Sources */,
 				FBBFD67321F6286F00BD5532 /* APIRequestFactory.swift in Sources */,
 				FBBFD67121F61CDF00BD5532 /* BaseModel.swift in Sources */,
+				FBA764912204E54D00660490 /* Symbol.swift in Sources */,
+				FBBFD67821F6897400BD5532 /* UILabel.swift in Sources */,
 				FBBFD66E21F5099F00BD5532 /* Stock.swift in Sources */,
-				FBA7648F22039A3800660490 /* Symbol.swift in Sources */,
+				FBBFD67621F67F5900BD5532 /* UIColor.swift in Sources */,
+				FBA7648D220382F000660490 /* UIFont.swift in Sources */,
 				FBBFD66A21F5004B00BD5532 /* APIRequest.swift in Sources */,
 				FBBFD66821F5003B00BD5532 /* APIClient.swift in Sources */,
+				FBF50A3621FA4C3D000ABE94 /* AddStockViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
