@@ -1,10 +1,6 @@
 import Alamofire
 import Foundation
 
-struct APIRequestConstants {
-  static let IEXHostName: String = "https://api.iextrading.com/"
-}
-
 struct APIRequest<ModelClass: Codable> {
 
   // MARK: Stored Properties
@@ -15,6 +11,12 @@ struct APIRequest<ModelClass: Codable> {
 
   var url: URL? {
     return URL(string: host + path)
+  }
+
+  struct Constants {
+    static var IEXHostName: String {
+      return "https://api.iextrading.com/"
+    }
   }
 
   init(host: String, methodType: Alamofire.HTTPMethod, path: String, modelClass: ModelClass.Type) {

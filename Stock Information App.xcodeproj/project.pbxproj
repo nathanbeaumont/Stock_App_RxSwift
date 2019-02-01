@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B8A6B827D2BBD706A73FEAC1 /* Pods_Stock_Information_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C38434C307434C94F8D9064 /* Pods_Stock_Information_App.framework */; };
 		B92C1CAE4A46F96FAD0363DE /* Pods_Stock_Information_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DAC8D878BCA6F0AB55D78D /* Pods_Stock_Information_AppTests.framework */; };
+		FBA7648F22039A3800660490 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7648E22039A3800660490 /* Symbol.swift */; };
 		FBBFD66821F5003B00BD5532 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD66721F5003B00BD5532 /* APIClient.swift */; };
 		FBBFD66A21F5004B00BD5532 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD66921F5004B00BD5532 /* APIRequest.swift */; };
 		FBBFD66E21F5099F00BD5532 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBFD66D21F5099F00BD5532 /* Stock.swift */; };
@@ -39,6 +40,7 @@
 		8C38434C307434C94F8D9064 /* Pods_Stock_Information_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Information_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAE88E332F75E65C0552125 /* Pods-Stock Information App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Information App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Information App/Pods-Stock Information App.debug.xcconfig"; sourceTree = "<group>"; };
 		ED0CD3C687DC5B28A66F9041 /* Pods-Stock Information App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Information App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Information App/Pods-Stock Information App.release.xcconfig"; sourceTree = "<group>"; };
+		FBA7648E22039A3800660490 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		FBBFD66721F5003B00BD5532 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		FBBFD66921F5004B00BD5532 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		FBBFD66D21F5099F00BD5532 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				FBBFD66D21F5099F00BD5532 /* Stock.swift */,
+				FBA7648E22039A3800660490 /* Symbol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				FBBFD67321F6286F00BD5532 /* APIRequestFactory.swift in Sources */,
 				FBBFD67121F61CDF00BD5532 /* BaseModel.swift in Sources */,
 				FBBFD66E21F5099F00BD5532 /* Stock.swift in Sources */,
+				FBA7648F22039A3800660490 /* Symbol.swift in Sources */,
 				FBBFD66A21F5004B00BD5532 /* APIRequest.swift in Sources */,
 				FBBFD66821F5003B00BD5532 /* APIClient.swift in Sources */,
 			);

@@ -1,7 +1,3 @@
-import Alamofire
-import Foundation
-import RxSwift
-
 struct Stock {
 
   // MARK: Stored Properties
@@ -22,6 +18,7 @@ struct Stock {
   var PERatio: Float
   var symbol: String
 
+  // MARK: Initializers
   init(averageVolume: Int,
        changePrice: Float,
        changePricePercent: Float,
