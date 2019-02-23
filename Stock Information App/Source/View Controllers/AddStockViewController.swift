@@ -2,6 +2,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import UIKit
+import Toast_Swift
 
 class AddStockViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class AddStockViewController: UIViewController {
   private let disposeBag: DisposeBag = DisposeBag()
   private var symbolList: Array<Symbol> = []
   private var symbolListDataSource: PublishSubject<Array<Symbol>> = PublishSubject.init()
+  private var symbolListFiltered: Variable<Array<Symbol>> = Variable.init([])
   private var symbolText: Variable<String> = Variable("")
 
   //MARK: View Controller Methods
@@ -74,7 +76,7 @@ class AddStockViewController: UIViewController {
 
     symbolText
       .asObservable()
-      .throttle(1.5, scheduler: MainScheduler.instance)
+      .throttle(0.5, scheduler: MainScheduler.instance)
       .filter({ $0.count > 0 })
       .subscribe(onNext: { symbolList in
         let searchString = self.symbolText.value
@@ -103,5 +105,21 @@ class AddStockViewController: UIViewController {
 
     tableView.tableFooterView = UIView()
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+    symbolListDataSource.bind(to: symbolListFiltered).disposed(by: disposeBag)
+
+    tableView.rx.itemSelected
+      .subscribe(onNext: { [weak self] indexPath in
+        if let symbol = self?.symbolListFiltered.value[indexPath.row] {
+          self?.view.isUserInteractionEnabled = false
+          StockListDataBaseManager.shared.addStock(symbol: symbol.symbolTicker)
+          let toastMessage = "\(symbol.symbolTicker)" + " was added to your list."
+          self?.view.makeToast(toastMessage, point: self?.view.center ?? CGPoint.zero,
+                               title: "Success",
+                               image: nil, completion: nil)
+          DispatchQueue.main.asyncAfter(deadline: .now() + ToastManager.shared.duration) {
+            self?.dismiss(animated: true, completion: nil)
+          }
+        }
+      }).disposed(by: disposeBag)
   }
 }
