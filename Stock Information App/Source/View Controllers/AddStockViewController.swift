@@ -13,8 +13,8 @@ class AddStockViewController: UIViewController {
   @IBOutlet weak var topLabel: UILabel!
 
   // MARK: Stored Properties
-  private let cellIdentifier = "cellIdentifier"
   private let disposeBag: DisposeBag = DisposeBag()
+  private let stockInformationCellIdentifier = String(describing: StockInformationCell.self)
   private var symbolList: Array<Symbol> = []
   private var symbolListDataSource: PublishSubject<Array<Symbol>> = PublishSubject.init()
   private var symbolListFiltered: Variable<Array<Symbol>> = Variable.init([])
@@ -61,11 +61,6 @@ class AddStockViewController: UIViewController {
         self.symbolListDataSource.onNext(symbols)
       })
       .disposed(by: disposeBag)
-
-    symbolListDataSource.bind(to: tableView.rx.items(cellIdentifier: cellIdentifier)) { index, model, cell in
-      cell.textLabel?.text = model.symbolTicker
-    }
-      .disposed(by: disposeBag)
   }
 
   private func setupTextField() {
@@ -99,13 +94,23 @@ class AddStockViewController: UIViewController {
       .disposed(by: disposeBag)
   }
 
-  private func setupTableView() {
-    tableView.delegate = nil
-    tableView.dataSource = nil
+  // MARK: TablieView DataSource & Delegate Observers
 
+  private func setupTableView() {
+    tableView.delegate = self
+    tableView.dataSource = nil
     tableView.tableFooterView = UIView()
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     symbolListDataSource.bind(to: symbolListFiltered).disposed(by: disposeBag)
+    symbolListDataSource
+      .bind(to: tableView.rx.items(cellIdentifier: stockInformationCellIdentifier)) { index, model, cell in
+        guard let cell = cell as? StockInformationCell else {
+          return
+        }
+
+        cell.companyNameLabel.text = model.name
+        cell.stockTickerLable.text = model.symbolTicker
+      }
+      .disposed(by: disposeBag)
 
     tableView.rx.itemSelected
       .subscribe(onNext: { [weak self] indexPath in
@@ -135,5 +140,11 @@ class AddStockViewController: UIViewController {
           }
         }
       }).disposed(by: disposeBag)
+  }
+}
+
+extension AddStockViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 55.0
   }
 }
