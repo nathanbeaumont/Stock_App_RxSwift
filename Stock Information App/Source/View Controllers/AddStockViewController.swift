@@ -110,14 +110,28 @@ class AddStockViewController: UIViewController {
     tableView.rx.itemSelected
       .subscribe(onNext: { [weak self] indexPath in
         if let symbol = self?.symbolListFiltered.value[indexPath.row] {
-          self?.view.isUserInteractionEnabled = false
-          StockListDataBaseManager.shared.addStock(symbol: symbol.symbolTicker)
-          let toastMessage = "\(symbol.symbolTicker)" + " was added to your list."
-          self?.view.makeToast(toastMessage, point: self?.view.center ?? CGPoint.zero,
-                               title: "Success",
-                               image: nil, completion: nil)
-          DispatchQueue.main.asyncAfter(deadline: .now() + ToastManager.shared.duration) {
-            self?.dismiss(animated: true, completion: nil)
+          let errorStatus = StockListDataBaseManager.shared.addStock(symbol: symbol.symbolTicker)
+          if errorStatus == .none {
+            self?.view.isUserInteractionEnabled = false
+            let toastMessage = "\(symbol.symbolTicker)" + " was added to your list."
+            self?.view.makeToast(toastMessage, point: self?.view.center ?? CGPoint.zero,
+                                 title: "Success",
+                                 image: nil, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + ToastManager.shared.duration) {
+              self?.dismiss(animated: true, completion: nil)
+            }
+          } else if errorStatus == .stockAlreadyAdded  {
+            self?.view.isUserInteractionEnabled = true
+            self?.view.makeToast("Symbol already added: \(symbol.symbolTicker)",
+              point: self?.view.center ?? CGPoint.zero,
+              title: "Whoops",
+              image: nil, completion: nil)
+          } else if errorStatus == .fileWrite  {
+            self?.view.isUserInteractionEnabled = true
+            self?.view.makeToast("Could not add Symbol: \(symbol.symbolTicker)",
+                                point: self?.view.center ?? CGPoint.zero,
+                                title: "Error",
+                                image: nil, completion: nil)
           }
         }
       }).disposed(by: disposeBag)

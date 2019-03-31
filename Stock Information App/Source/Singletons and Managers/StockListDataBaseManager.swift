@@ -1,35 +1,61 @@
 import Foundation
 
+enum AddStockError: Int {
+  case none = 0
+  case stockAlreadyAdded = 1
+  case fileWrite = 2
+}
+
 final class StockListDataBaseManager {
 
   static let shared = StockListDataBaseManager()
 
-  lazy var plistPath: String = {
-    let plistFileName = "Stock_List.plist"
-    let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-    let documentPath = paths[0] as NSString
-    let plistPath = documentPath.appendingPathComponent(plistFileName)
+  private init() {
+    createPlistInDocumentsIfNeeded()
+  }
 
-    return plistPath
+    lazy var plistPathInDocument: String = {
+      let rootPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,
+                                                         .userDomainMask, true)[0]
+      return rootPath.appendingFormat("Stock_List.plist")
   }()
 
-  public func addStock(symbol ticker: String) {
-    if FileManager.default.fileExists(atPath: plistPath) {
-      let stocks = NSMutableArray(contentsOfFile: plistPath) ?? NSMutableArray()
-      stocks.add(ticker)
-      stocks.write(toFile: plistPath, atomically: true)
+  public func addStock(symbol ticker: String) -> AddStockError {
+    guard FileManager.default.fileExists(atPath: plistPathInDocument),
+      let stockList = NSMutableArray(contentsOfFile: plistPathInDocument) else {
+        return .fileWrite
     }
+
+    guard !stockList.contains(ticker) else {
+      return .stockAlreadyAdded
+    }
+
+    stockList.add(ticker)
+    if stockList.write(toFile: plistPathInDocument, atomically: true) {
+      return .none
+    }
+
+    return .fileWrite
   }
 
   public func getSavedStocks() -> [String] {
-    if FileManager.default.fileExists(atPath: plistPath) {
-      if let stocks = NSArray(contentsOfFile: plistPath) {
-        for (_, element) in stocks.enumerated() {
-         print(element)
-        }
-      }
+    if FileManager.default.fileExists(atPath: plistPathInDocument),
+      let stockList = NSMutableArray(contentsOfFile: plistPathInDocument) {
+        return stockList as! [String]
     }
 
     return []
+  }
+
+  public func createPlistInDocumentsIfNeeded() {
+    if !FileManager.default.fileExists(atPath: plistPathInDocument) {
+      let plistPathInBundle = Bundle.main.path(forResource: "Stock_List", ofType: "plist")!
+      // 3
+      do {
+        try FileManager.default.copyItem(atPath: plistPathInBundle, toPath: plistPathInDocument)
+      } catch {
+        print("Error occurred while copying file to document \(error)")
+      }
+    }
   }
 }

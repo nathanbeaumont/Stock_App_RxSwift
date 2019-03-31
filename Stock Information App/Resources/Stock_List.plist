@@ -2,7 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>APPL</key>
-	<string></string>
+	<key>stock_list</key>
+	<array>
+		<string>USO</string>
+		<string>AAPL</string>
+	</array>
 </dict>
 </plist>

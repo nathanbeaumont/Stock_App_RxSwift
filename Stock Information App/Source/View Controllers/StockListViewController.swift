@@ -23,6 +23,7 @@ class StockListViewController: UIViewController {
     topLabel.configureLabel(fontSize: 22.0)
 
     setupAddButtonObserver()
+    StockListDataBaseManager.shared.getSavedStocks()
   }
 
   // MARK: Observer Creation Methods

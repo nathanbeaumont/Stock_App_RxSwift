@@ -134,6 +134,52 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7VI-7R-Oio">
                                 <rect key="frame" x="0.0" y="170" width="375" height="462"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StockInformationCell" rowHeight="88" id="ao5-Dl-BnH" customClass="StockInformationCell" customModule="Stock_Information_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ao5-Dl-BnH" id="vkG-Am-cCh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stock Ticker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gP8-kM-Evz">
+                                                    <rect key="frame" x="15" y="11" width="95.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uk5-ZZ-wBl">
+                                                    <rect key="frame" x="15" y="48" width="123" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$55.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Q4-ns-1dm">
+                                                    <rect key="frame" x="305" y="33.5" width="55" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Uk5-ZZ-wBl" secondAttribute="trailing" constant="20" symbolic="YES" id="2fV-uM-zcu"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gP8-kM-Evz" secondAttribute="trailing" constant="20" symbolic="YES" id="3Ew-S3-0Q8"/>
+                                                <constraint firstItem="Uk5-ZZ-wBl" firstAttribute="top" secondItem="gP8-kM-Evz" secondAttribute="bottom" constant="16" id="AhP-Ny-t4v"/>
+                                                <constraint firstItem="gP8-kM-Evz" firstAttribute="top" secondItem="vkG-Am-cCh" secondAttribute="topMargin" id="aeJ-nH-REP"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Uk5-ZZ-wBl" secondAttribute="bottom" constant="8" id="iZx-i3-T4L"/>
+                                                <constraint firstItem="0Q4-ns-1dm" firstAttribute="trailing" secondItem="vkG-Am-cCh" secondAttribute="trailingMargin" id="rgC-DO-Bw0"/>
+                                                <constraint firstItem="gP8-kM-Evz" firstAttribute="leading" secondItem="vkG-Am-cCh" secondAttribute="leadingMargin" id="spK-cf-5xh"/>
+                                                <constraint firstItem="Uk5-ZZ-wBl" firstAttribute="leading" secondItem="vkG-Am-cCh" secondAttribute="leadingMargin" id="vvJ-GD-8Df"/>
+                                                <constraint firstItem="0Q4-ns-1dm" firstAttribute="centerY" secondItem="vkG-Am-cCh" secondAttribute="centerY" id="yka-K5-N2U"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="companyNameLabel" destination="Uk5-ZZ-wBl" id="kw4-oC-d8w"/>
+                                            <outlet property="marketPrice" destination="0Q4-ns-1dm" id="39U-6c-12Q"/>
+                                            <outlet property="stockTickerLable" destination="gP8-kM-Evz" id="ozd-hn-8Cx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
