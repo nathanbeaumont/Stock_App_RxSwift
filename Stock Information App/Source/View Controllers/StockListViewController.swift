@@ -12,8 +12,11 @@ class StockListViewController: UIViewController {
 
 
   // MARK: Stored Properties
-  let disposeBag = DisposeBag()
-  var symbolList: [Symbol]?
+  private let stockCellIdentifier = String(describing: TrackedStockCell.self)
+  private var stockListDataSource: PublishSubject<Array<Stock>> = PublishSubject.init()
+  private let disposeBag = DisposeBag()
+  private var symbolList: [Stock] = []
+  private var stockListSubject: StockListSubject?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,12 +26,30 @@ class StockListViewController: UIViewController {
     topLabel.configureLabel(fontSize: 22.0)
 
     setupAddButtonObserver()
-    StockListDataBaseManager.shared.getSavedStocks()
+    setupTableView()
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    setupDataSourceObserver()
+  }
+
+  func setupDataSourceObserver() {
+    symbolList = []
+    stockListSubject = StockListSubject(stockList: StockListDataBaseManager.shared.getSavedStocks())
+    stockListSubject?.publishSubject
+      .subscribe(onNext: { [weak self] stock in
+        self?.symbolList.append(stock)
+        self?.stockListDataSource.onNext(self?.symbolList ?? [])
+      })
+      .disposed(by: disposeBag)
   }
 
   // MARK: Observer Creation Methods
   private func setupAddButtonObserver() {
-    addButton.rx.tap
+    addButton.rx
+      .tap
       .subscribe(onNext: { [unowned self] _ in
         if let addStockVC = self.storyboard?.instantiateViewController(withIdentifier: "AddStockViewController") {
           let navController = UINavigationController.navigationControllerForModallyPresented(view: addStockVC)
@@ -36,5 +57,29 @@ class StockListViewController: UIViewController {
         }
       })
       .disposed(by: disposeBag)
+  }
+
+  // MARK: TablieView DataSource & Delegate Observers
+
+  private func setupTableView() {
+    tableView.allowsSelection = false
+    tableView.dataSource = nil
+    tableView.delegate = self
+    tableView.tableFooterView = UIView()
+    stockListDataSource
+      .bind(to: tableView.rx.items(cellIdentifier: stockCellIdentifier)) { index, model, cell in
+        guard let cell = cell as? TrackedStockCell else {
+          return
+        }
+
+        cell.configureStockCell(stock: model)
+      }
+      .disposed(by: disposeBag)
+  }
+}
+
+extension StockListViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 120.0
   }
 }

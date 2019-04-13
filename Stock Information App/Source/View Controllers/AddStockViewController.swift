@@ -52,6 +52,7 @@ class AddStockViewController: UIViewController {
   }
 
   // MARK: Observer Creation Methods
+  
   private func getSecuritySymbols() {
     APIClient.perform(Request: APIRequestFactory.symbolList())
       .asObservable()
@@ -65,7 +66,8 @@ class AddStockViewController: UIViewController {
 
   private func setupTextField() {
     stockTickerTextField.rx
-      .text.orEmpty
+      .text
+      .orEmpty
       .bind(to: self.symbolText)
       .disposed(by: disposeBag)
 

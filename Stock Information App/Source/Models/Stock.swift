@@ -1,3 +1,26 @@
+import Foundation
+import RxSwift
+
+class StockListSubject {
+
+  // Subscribe to this Subject to get new Stocks as the the API requests finish
+  let publishSubject: PublishSubject<Stock>
+  let disposeBag: DisposeBag
+
+  required init(stockList: [String]) {
+    publishSubject = PublishSubject.init()
+    disposeBag = DisposeBag()
+
+    for stockSymbol in stockList {
+      APIClient.perform(Request: APIRequestFactory.stock(tickerSymbol: stockSymbol))
+        .subscribe(onNext: { [weak self] stock in
+          self?.publishSubject.onNext(stock)
+        })
+        .disposed(by: disposeBag)
+    }
+  }
+}
+
 struct Stock {
 
   // MARK: Stored Properties
@@ -15,7 +38,7 @@ struct Stock {
   var lowPriceOfDay: Float
   var marketCap: Int
   var openPrice: Float
-  var PERatio: Float
+  var PERatio: Float?
   var symbol: String
 
   // MARK: Initializers
@@ -33,7 +56,7 @@ struct Stock {
        lowPriceOfDay: Float,
        marketCap: Int,
        openPrice: Float,
-       PERatio: Float,
+       PERatio: Float?,
        symbol: String) {
         self.averageVolume = averageVolume
         self.changePrice = changePrice

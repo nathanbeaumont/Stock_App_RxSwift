@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		450D3A5A46899FA1252267A4 /* Pods_Stock_Information_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933E0DF59418101206BDBB4A /* Pods_Stock_Information_App.framework */; };
 		52045BF8F313424BDEC35CED /* Pods_Stock_Information_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77F87AB632DA99451C4631A /* Pods_Stock_Information_AppTests.framework */; };
+		FB77189622624AC700C38C2D /* TrackedStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77189522624AC700C38C2D /* TrackedStockCell.swift */; };
 		FBA7648D220382F000660490 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA7648C220382F000660490 /* UIFont.swift */; };
 		FBA764912204E54D00660490 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA764902204E54D00660490 /* Symbol.swift */; };
 		FBB9964E2249B6A900C703DD /* StockInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB9964D2249B6A900C703DD /* StockInformationCell.swift */; };
@@ -48,6 +49,7 @@
 		9F08F45A72459B47E30E34B8 /* Pods-Stock Information App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Information App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Information App/Pods-Stock Information App.debug.xcconfig"; sourceTree = "<group>"; };
 		D77F87AB632DA99451C4631A /* Pods_Stock_Information_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock_Information_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E164972E64A5583153F2F434 /* Pods-Stock Information App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock Information App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stock Information App/Pods-Stock Information App.release.xcconfig"; sourceTree = "<group>"; };
+		FB77189522624AC700C38C2D /* TrackedStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedStockCell.swift; sourceTree = "<group>"; };
 		FBA7648C220382F000660490 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		FBA764902204E54D00660490 /* Symbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		FBB9964D2249B6A900C703DD /* StockInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInformationCell.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				FBB9964D2249B6A900C703DD /* StockInformationCell.swift */,
+				FB77189522624AC700C38C2D /* TrackedStockCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				FBDED87C21DA830B00CEDC6B /* StockListViewController.swift in Sources */,
 				FBDED87A21DA830B00CEDC6B /* AppDelegate.swift in Sources */,
 				FBF50A3821FA50DC000ABE94 /* UINavigationController.swift in Sources */,
+				FB77189622624AC700C38C2D /* TrackedStockCell.swift in Sources */,
 				FBBFD67321F6286F00BD5532 /* APIRequestFactory.swift in Sources */,
 				FBBFD67121F61CDF00BD5532 /* BaseModel.swift in Sources */,
 				FBD985122221AD4200C81E40 /* StockListDataBaseManager.swift in Sources */,

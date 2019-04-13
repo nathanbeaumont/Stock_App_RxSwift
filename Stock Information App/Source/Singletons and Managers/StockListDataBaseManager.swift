@@ -14,7 +14,7 @@ final class StockListDataBaseManager {
     createPlistInDocumentsIfNeeded()
   }
 
-    lazy var plistPathInDocument: String = {
+  lazy var plistPathInDocument: String = {
       let rootPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,
                                                          .userDomainMask, true)[0]
       return rootPath.appendingFormat("Stock_List.plist")
