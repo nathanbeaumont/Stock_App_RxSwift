@@ -10,5 +10,9 @@ extension UIFont {
     public static func avenirFont(fontsize: CGFloat) -> UIFont {
       return UIFont(name: "AvenirNext-Regular", size: fontsize)!
     }
+
+    public static func avenirFontBold(fontsize: CGFloat) -> UIFont {
+      return UIFont(name: "AvenirNext-Bold", size: fontsize)!
+    }
   }
 }

@@ -41,6 +41,7 @@ class StockListViewController: UIViewController {
     stockListSubject?.publishSubject
       .subscribe(onNext: { [weak self] stock in
         self?.symbolList.append(stock)
+        self?.symbolList.sort(by: { $0.symbol < $1.symbol })
         self?.stockListDataSource.onNext(self?.symbolList ?? [])
       })
       .disposed(by: disposeBag)

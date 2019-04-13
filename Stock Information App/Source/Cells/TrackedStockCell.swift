@@ -18,8 +18,11 @@ class TrackedStockCell: UITableViewCell {
     super.awakeFromNib()
 
     for label in allLabels {
-      label.configureLabel(fontSize: 16.0, textColor: UIColor.darkGray)
+      label.configureLabel(fontSize: 16.0, textColor: .darkGray)
     }
+
+    symbolLabel.textColor = .black
+    symbolLabel.font = UIFont.Custom.avenirFontBold(fontsize: 17.0)
   }
 
   // MARK: Public Methods
